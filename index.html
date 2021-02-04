@@ -12,33 +12,34 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
-                    <input class="form-control" type="text">
-                    <button class="generate-btn">Generate Pin</button>
+                    <input id="pin-display" class="form-control" type="text" value="">
+                    <button id="generate-pin" class="generate-btn">Generate Pin</button>
+                    <!-- <button onclick="pinGenerate('pin-btn')" class="generate-btn">Generate Pin</button> -->
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input class="form-control" type="text">
+                    <input id="input-display" class="form-control" type="text" value="">
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
-                              <div class="button">7</div>
-                              <div class="button">8</div>
-                              <div class="button">9</div>
+                              <div onclick="inputFunction('7')" id="btn-7" class="button">7</div>
+                              <div onclick="inputFunction('8')" id="btn-8" class="button">8</div>
+                              <div onclick="inputFunction('9')" id="btn-9" class="button">9</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">4</div>
-                              <div class="button">5</div>
-                              <div class="button">6</div>
+                              <div onclick="inputFunction('4')" id="btn-4" class="button">4</div>
+                              <div onclick="inputFunction('5')" id="btn-5" class="button">5</div>
+                              <div onclick="inputFunction('6')" id="btn-6" class="button">6</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">1</div>
-                              <div class="button">2</div>
-                              <div class="button">3</div>
+                              <div onclick="inputFunction('1')" id="btn-1" class="button">1</div>
+                              <div onclick="inputFunction('2')" id="btn-2" class="button">2</div>
+                              <div onclick="inputFunction('3')" id="btn-3" class="button">3</div>
                             </div>
                             <div class="calc-button-row">
                                 <div class="button"><</div>
-                                <div class="button">0</div>
+                                <div onclick="inputFunction('0')" id="btn-0" class="button">0</div>
                                 <div class="button">C</div>
                             </div>
                             <div>
@@ -54,5 +55,89 @@
             <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
+
+    <script src="js/pinGenerate.js"></script>
+    <script src="js/getInput.js"></script>
+
+    <script>
+        // function inputFunction(value){
+        //     const inputValue = getInputValue(value);
+        //     createInput(inputValue);
+        // }
+
+        // function getInputValue(value){
+        //     const inputValue = document.getElementById('btn-' + value).innerText;
+        //     return inputValue;
+        // }
+
+        // function createInput(inputValue){
+        //     let fullInput = document.getElementById('input-display').value;
+        //     console.log(typeof(fullInput));
+        //     for (let i = 0; i < arguments.length; i++) {
+        //         let partInput = arguments[i];
+        //         fullInput = fullInput + partInput;
+        //         document.getElementById('input-display').value = fullInput;
+        //     }
+        // }
+
+        // document.getElementById('btn-0').addEventListener('click', function(){
+        //     console.log(0);
+        // })
+        // document.getElementById('btn-1').addEventListener('click', function(){
+        //     console.log(1);
+        // })
+        // document.getElementById('btn-2').addEventListener('click', function(){
+        //     console.log(2);
+        // })
+        // document.getElementById('btn-3').addEventListener('click', function(){
+        //     console.log(3);
+        // })
+        // document.getElementById('btn-4').addEventListener('click', function(){
+        //     console.log(4);
+        // })
+        // document.getElementById('btn-5').addEventListener('click', function(){
+        //     console.log(5);
+        // })
+        // document.getElementById('btn-6').addEventListener('click', function(){
+        //     console.log(6);
+        // })
+        // document.getElementById('btn-7').addEventListener('click', function(){
+        //     console.log(7);
+        // })
+        // document.getElementById('btn-8').addEventListener('click', function(){
+        //     console.log(8);
+        // })
+        // document.getElementById('btn-9').addEventListener('click', function(){
+        //     console.log(9);
+        // })
+        //console.log(inputValue);
+
+        // document.getElementById('generate-pin').addEventListener('click', function(){
+        //     const generatedPin = pinGenerate();
+        //     if(generatedPin.length == 4){
+        //         document.getElementById('pin-display').value = generatedPin;
+        //     }
+        //     else{
+        //         pinGenerate();
+        //     }
+        // })
+
+        // function pinGenerate(){
+        //     const generatedPin = (Math.random()*10000+'').split('.')[0];
+        //     return generatedPin;
+        // }
+        
+        // document.getElementById('generate-pin').addEventListener('click', function(){
+        //     const generatedPin = (Math.random()*10000+'').split('.')[0];
+        //     if(generatedPin.length == 4){
+        //         document.getElementById('pin-display').value = generatedPin;
+        //     }
+        //     else{
+        //         const generatedPin = (Math.random()*10000+'').split('.')[0];
+        //         document.getElementById('pin-display').value = generatedPin;
+        //     }
+            
+        // })
+    </script>
 </body>
 </html>
