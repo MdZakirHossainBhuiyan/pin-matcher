@@ -67,11 +67,12 @@
                 const notifyMessage = document.getElementById('true-notify').innerText;
                 document.getElementById('pin-display').value = "";
                 document.getElementById('input-display').value = "";
-                notifyMessage.style.display = "block";
+                document.getElementById('try-count').innerText = 3;
+                // notifyMessage.style.display = "block";
             }
             else{
                 const notifyMessage = document.getElementById('false-notify').innerText;
-                notifyMessage.style.display = "block";
+                // notifyMessage.style.display = "block";
                 const tryLimit = document.getElementById('try-count').innerText;
                 const remainingTryLimit = tryLimit - 1;
                 console.log(remainingTryLimit);
