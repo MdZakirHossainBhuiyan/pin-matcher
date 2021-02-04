@@ -43,7 +43,7 @@
                                 <div class="button">C</div>
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn">Submit</button>
+                                <button id="submit-btn" type="submit" class="submit-btn">Submit</button>
                                 <p class="action-left">3 try left</p>
                             </div>
                     </div>
@@ -51,8 +51,8 @@
             </div>
         </div>
         <div class="notify-section">
-            <p class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            <p id="false-notify" class="notify">❌ Pin Didn't Match, Please try again</p>
+            <p id="true-notify" class="notify">✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
 
@@ -60,6 +60,21 @@
     <script src="js/getInput.js"></script>
 
     <script>
+        document.getElementById('submit-btn').addEventListener('click', function(){
+            const generatedPin = document.getElementById('pin-display').value;
+            const inputPin = document.getElementById('input-display').value;
+            if(generatedPin == inputPin){
+                const notifyMessage = document.getElementById('true-notify').innerText;
+                console.log(notifyMessage);
+                notifyMessage.style.display = "block";
+            }
+            else{
+                console.log("false");
+                const notifyMessage = document.getElementById('false-notify').innerText;
+                notifyMessage.style.display = "block";
+            }
+        })
+
         // function inputFunction(value){
         //     const inputValue = getInputValue(value);
         //     createInput(inputValue);
