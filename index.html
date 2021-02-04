@@ -38,13 +38,13 @@
                               <div onclick="inputFunction('3')" id="btn-3" class="button">3</div>
                             </div>
                             <div class="calc-button-row">
-                                <div class="button"><</div>
+                                <div onclick="inputFunctionClear('back')" id="btn-back" class="button"><</div>
                                 <div onclick="inputFunction('0')" id="btn-0" class="button">0</div>
-                                <div class="button">C</div>
+                                <div onclick="inputFunctionClear('clear')" id="btn-clear" class="button">C</div>
                             </div>
                             <div>
                                 <button id="submit-btn" type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <p class="action-left"><span id="try-count">3</span> try left</p>
                             </div>
                     </div>
                 </div>
@@ -65,13 +65,22 @@
             const inputPin = document.getElementById('input-display').value;
             if(generatedPin == inputPin){
                 const notifyMessage = document.getElementById('true-notify').innerText;
-                console.log(notifyMessage);
+                document.getElementById('pin-display').value = "";
+                document.getElementById('input-display').value = "";
                 notifyMessage.style.display = "block";
             }
             else{
-                console.log("false");
                 const notifyMessage = document.getElementById('false-notify').innerText;
                 notifyMessage.style.display = "block";
+                const tryLimit = document.getElementById('try-count').innerText;
+                const remainingTryLimit = tryLimit - 1;
+                console.log(remainingTryLimit);
+                document.getElementById('try-count').innerText = remainingTryLimit;
+                if(remainingTryLimit == 0){
+                    document.getElementById('pin-display').value = "";
+                    document.getElementById('input-display').value = "";
+                    document.getElementById('try-count').innerText = 3;
+                }
             }
         })
 
